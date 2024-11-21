@@ -1,0 +1,188 @@
+#This was the Assignment assigned to us
+Updates February 22, 2024 COSC 1437 S24
+
+Program Set #2
+Total Points: 20
+Two of the three problems below must be implemented for full credit. See the 1437 Grading and
+Submission Guide Sheets for additional grading/submission information. Partial credit will be given.
+(10 points each)
+Section One- Choose two problems.
+1. Write a C++ program that plays the memory matching game with a deck of cards that contain
+identical pairs. For example, given six cards in the deck, two might be labeled 1, two might be labeled
+2, and two might be labeled 3. The cards are shuffled and placed face down on the table. The player
+then selects two cards that are facedown, turns them face up, and if they match, they are left face up.
+If the two cards do not match, they are returned to their original position facedown. The game
+continues in this fashion until all cards are face up. Use 16 cards that are laid out in a 4 × 4 matrix
+labeled with pairs of numbers in the range [1,8]. The program should allow the player to specify the
+cards through a coordinate system. For example:
+1 2 3 4 (X)
++---------+
+1| 8 * * * |
+2| * * * * |
+3| * 8 * * |
+4| * * * * |
++---------+
+(Y)
+In the example above, all the cards are facedown except for the pair of 8’s, located at coordinates (1,1)
+and (2,3). Find all the matching pairs on the board. Input from the keyboard the x and y coordinates on
+the same line. Error check inputs. Output to the screen the game step by step as seen in the sample run
+under the data file folder. Finally, the program should ask if the user wants to run the program again
+(Check case). Make your output different but user friendly. Note you can change the axis coordinates (R
+C vs. C R), but make sure the directions are clear in the prompt to the user.
+Name the program: MemoryGameXX.cpp, where XX are your initials.
+2. Mastermind is a guessing game whose goal is to guess a particular combination of four colored pegs
+that your opponent has set up where you can't see them. The player guesses which colors are in
+which position and the opponent tells the player how many of pegs have the right color in the right
+place and how many of the remaining pegs are the right color but in the wrong position. The player
+Updates February 22, 2024 COSC 1437 S24
+2
+then continues to guess based on this information, trying to figure out the color of all four pegs in as
+few tries as possible.
+Write a C++ program to implement a simplified version of the game where the colored pegs are
+replaced with a sequence of four random numbers (master sequence) that have possible values
+between [0,5]. There are two program options. The first option is the demo mode- a demo mode is
+required so the program can be graded. In demo mode, the user will enter exactly four integers
+between [0,5] separated by spaces for the master key and the user guesses the sequence from the
+keyboard. The second option is game mode. In this mode, the program will randomly generate the
+master sequence and the user guesses the sequence from the keyboard. In either mode, the four
+numbers will then be compared to the computer's master sequence and provide feedback to the player
+after each guess. For each guess output to the screen a statement of the following form:
+You have X perfect matches and Y imperfect matches.
+where X is the number of perfect matches (right number, right spot) and Y is the number of imperfect
+matches (right number, wrong spot with no double counting). At the end of the game, if the user wins,
+output the number of guesses they needed in the following form:
+You won the game in X turns.
+where X is the number of turns taken. If the user loses (after 10 ten turns), then output to the screen a
+message along with a printout of the correct master sequence given in the following form:
+Sorry, you exceeded the maximum number of turns.
+Here are the winning numbers: A B C D
+where A, B, C and D are the numbers (in order) of the secret pegs (master sequence). Finally, the
+program should ask if the user wants to run the program again (Check case). Refer to the sample output
+below.
+Sample Run:
+Mastermind
+Enter [D/d]-demo mode or [G/g]-game mode: d
+You have 10 chances, good luck!
+Enter master sequence: 5 5 5 3
+Guess 1: 0 1 2 3
+You have 1 perfect matches and 0 imperfect matches.
+Guess 2: 4 4 4 4
+You have 0 perfect matches and 0 imperfect matches.
+Updates February 22, 2024 COSC 1437 S24
+3
+Guess 3: 5 5 5 3
+You have 4 perfect matches and 0 imperfect matches.
+You won the game in 3 turns.
+Run Again (Y/N): y
+Enter [D/d]-demo mode or [G/g]-game mode: G
+You have 10 chances, good luck!
+Guess 1: 0 1 2 3
+You have 1 perfect matches and 0 imperfect matches.
+Guess 2: 4 5 2 1
+You have 0 perfect matches and 3 imperfect matches.
+Guess 3: 5 2 1 3
+You have 1 perfect matches and 1 imperfect matches.
+Guess 4: 5 4 2 3
+You have 1 perfect matches and 1 imperfect matches.
+Guess 5: 2 3 4 5
+You have 2 perfect matches and 0 imperfect matches.
+Guess 6: 2 3 1 1
+You have 0 perfect matches and 1 imperfect matches.
+Guess 7: 2 4 5 0
+You have 0 perfect matches and 2 imperfect matches.
+Guess 8: 1 2 5 3
+You have 0 perfect matches and 2 imperfect matches.
+Guess 9: 1 4 3 1
+You have 0 perfect matches and 2 imperfect matches.
+Guess 10: 1 4 2 3
+You have 0 perfect matches and 2 imperfect matches.
+Sorry, you exceeded the maximum number of turns.
+Here are the winning numbers: 5 1 4 5
+Run Again (Y/N): n
+Name the program: MasterMindXX.cpp, where XX are your initials.
+Updates February 22, 2024 COSC 1437 S24
+4
+3. Write a C++ program that plays the game of Hammurabi. Here are the standard instructions for the
+game:
+Congratulations, you are the newest ruler of ancient Samaria, elected for a 10-
+year term of office. Your duties are to dispense food, direct farming, and buy and
+sell land as needed to support your people. Watch out for rat infestations and the
+plague! Grain is the general currency, measured in bushels. The following will
+help you in your decisions:
+• Each person needs at least 20 bushels of grain per year to survive.
+• Each person can farm at most 10 acres of land.
+• It takes 2 bushels of grain to farm an acre of land.
+• The market price for land fluctuates yearly.
+Rule wisely and you will be showered with appreciation at the end of your term.
+Rule poorly and you will be kicked out of office!
+The Java program is provided under the data file folder and can be modified and translated to C++.
+Make sure you follow the same functions and function order as stated in Java code. Do not use OOP.
+Output should be user friendly.
+Name the program: HammurabiXX.cpp, where XX are your initials.
+Updates February 22, 2024 COSC 1437 S24
+5
+Extra Credit: Choose one of the two problems below to Implement for extra credit. See the 1437
+Grading and Submission Guide Sheets for additional grading/submission information. Partial credit
+will be given. (10 points)
+1. Write a C++ program to generate a "wave" from a string of characters and numbers. If a character
+has a higher ASCII value than the character before it, the wave will be raised from that point on. If a
+character has a lower ASCII value than the character before it, the wave will be lowered from that point
+on. Otherwise, there will be no wave change. Input from the keyboard a string in the range [1,50].
+Assume proper input. Output to the screen the visual representation of the wave. Start from the first
+character, then for each character after it either raise it, lower it, or keep it on the same row as the
+character before it. Finally, the program should ask if the user wants to run the program again (Check
+case). Refer to the sample output below.
+Sample Run:
+Enter string: ABCDE543210ZYXw
+E
+D 5
+C 4
+B 3
+A 2
+1 Z
+0 Y w
+X
+Run Again (Y/N): Y
+Enter string: Hello World
+r
+o l
+o W d
+ll
+e
+H
+Run Again (Y/N): y
+Enter string: 134583490.?Me
+e
+9 M
+8 4 0 ?
+Updates February 22, 2024 COSC 1437 S24
+6
+5 3 .
+4
+3
+1
+Run Again (Y/N): y
+Enter string: The quick brown fox jumped over the lazy dog.
+u p
+x j m e v r t
+h u r w o d o e h
+T e q i k b o n f e l z o
+c a y d g
+.
+Run Again (Y/N): N
+Name the program: StringWavesXX.cpp, where XX are your initials.
+2. Write a C++ program to output a diamond-shaped array of letters on the screen. The word radiates
+up, down, left, and right to spell the word. In addition, while moving up, down, left, or right, make one
+right-angled turn and still spell out the entire word. Note in each case the last letter of the word
+surrounds the outer edge of the array. Input from the keyboard a word in the range [1,9] characters.
+Convert to uppercase and assume proper input. Output to the screen the diamond-shape using the
+algorithm mentioned above. Finally, the program should ask if the user wants to run the program again
+(Check case). Refer to the sample output below.
+Sample Run:
+Enter word [1-9]: SCHOOL
+Run Again (Y/N): y
+Enter word [1-9]: LOTUS
+Updates February 22, 2024 COSC 1437 S24
+7
+Run Again (Y/N): N
+Name the program: DiamondWordShapeXX.cpp, where XX are your initials.
